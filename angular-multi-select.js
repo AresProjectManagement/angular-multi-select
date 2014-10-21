@@ -412,6 +412,13 @@ angular.module( 'multi-select', ['ng'] ).directive( 'multiSelect' , [ '$sce', '$
                     // Multiple
                     else {
                         $scope.filteredModel[ index ][ $scope.tickProperty ]   = !$scope.filteredModel[ index ][ $scope.tickProperty ];
+
+                        var $target = $(e.target);
+                        if ($target.attr('type') === 'checkbox') {
+                            $timeout(function () {
+                                $target.prop('checked', item[ $scope.tickProperty ]);
+                            });
+                        }
                     }
 
                     // we refresh input model as well
