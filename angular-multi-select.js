@@ -106,7 +106,6 @@ angular.module( 'multi-select', ['ng'] ).directive( 'multiSelect' , [ '$sce', '$
                                         '<span ng-class="{disabled:itemIsDisabled( item )}" ng-bind-html="writeLabel( item, \'itemLabel\' )"></span>' +
                                     '</label>' +
                                 '</div>' +
-                                '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                                 '<span class="tickMark" ng-if="item[ groupProperty ] !== true && item[ tickProperty ] === true">&#10004;</span>' +
                             '</div>' +
                         '</div>' +
@@ -548,7 +547,7 @@ angular.module( 'multi-select', ['ng'] ).directive( 'multiSelect' , [ '$sce', '$
                     if ( typeof value2 !== 'undefined' ) {
                         angular.forEach( item, function( value1, key1 ) {
                             if ( key1 == value2 ) {
-                                label += '&nbsp;' + value1;
+                                label += value1;
                             }
                         });
                     }
